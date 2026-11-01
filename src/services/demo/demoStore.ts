@@ -4,6 +4,7 @@
  */
 import type {
   Alert,
+  CommandStatus,
   Device,
   IrrigationDecision,
   IrrigationSession,
@@ -151,7 +152,7 @@ export const demo = {
     const id = "cmd-" + Math.random().toString(36).slice(2, 8);
     p.command = { id, action, status: "pending", updatedAt: iso(now()) };
     emitDemoEvent({ type: "pump.command_updated", plotId });
-    const step = (status: PumpState["command"] extends infer C ? C extends { status: infer S } ? S : never : never, delay: number, after?: () => void) =>
+    const step = (status: CommandStatus, delay: number, after?: () => void) =>
       setTimeout(() => {
         if (p.command?.id !== id) return;
         p.command.status = status;
@@ -247,11 +248,8 @@ export const demo = {
 function tick(plotId: string, cmdId: string) {
   const p = pumps[plotId];
   const iv = setInterval(() => {
-    if (!p.confirmedOn || p.command?.id !== cmdId && p.command?.action === "start") {
-      clearInterval(iv);
-      return;
-    }
     if (!p.confirmedOn) return clearInterval(iv);
+    void cmdId;
     p.runtimeSec += 5;
     const flowPer5s = (settings[plotId].flowRateLpm / 60) * 5 * 20; // demo time-acceleration ×20
     p.deliveredL = Math.min(p.deliveredL + flowPer5s, p.deliveredL + p.remainingL);
