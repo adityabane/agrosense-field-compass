@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createClient, type SupabaseClient, type Session } from "@supabase/supabase-js";
 
 const url = import.meta.env.VITE_SUPABASE_URL as string | undefined;

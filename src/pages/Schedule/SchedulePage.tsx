@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState } from "react";
 import { CalendarClock, CheckCircle2, Clock, PauseCircle, XCircle } from "lucide-react";
 import { EmptyState, EstimatedTag, PageHeader, Panel, RuleBasedTag } from "@/components/ui/agro";

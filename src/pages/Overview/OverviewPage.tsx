@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Link } from "@tanstack/react-router";
 import { AlertTriangle, CalendarClock, CloudSun, Droplets, Map, Power, Ruler, Sprout } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";

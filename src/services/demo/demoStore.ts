@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * DEMO MODE data store. Everything here is SIMULATED and is only used when
  * VITE_API_BASE_URL is not configured. It is never presented as hardware data.

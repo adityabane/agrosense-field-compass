@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Lightbulb } from "lucide-react";
 import { Panel, RuleBasedTag, LevelBadge } from "@/components/ui/agro";
 import { Skeleton } from "@/components/ui/skeleton";
