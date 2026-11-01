@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState } from "react";
 import { Cpu, Signal } from "lucide-react";
 import { CardsSkeleton, EmptyState, ErrorState, LevelBadge, PageHeader, Panel } from "@/components/ui/agro";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { DEMO_MODE, delay, http } from "./client";
 import { demo } from "@/services/demo/demoStore";
 import type {

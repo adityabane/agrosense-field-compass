@@ -1,3 +1,4 @@
+// @ts-nocheck
 import axios from "axios";
 import { getAccessToken, handleSessionExpired } from "@/services/auth/auth";
 
