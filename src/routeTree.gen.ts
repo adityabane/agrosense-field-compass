@@ -10,33 +10,218 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AlertsRouteImport } from './routes/alerts'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as AutomationRouteImport } from './routes/automation'
+import { Route as CropsRouteImport } from './routes/crops'
+import { Route as DevicesRouteImport } from './routes/devices'
+import { Route as IrrigationRouteImport } from './routes/irrigation'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as MonitorRouteImport } from './routes/monitor'
+import { Route as MoreRouteImport } from './routes/more'
+import { Route as PlotsRouteImport } from './routes/plots'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as ScheduleRouteImport } from './routes/schedule'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as PlotsIdRouteImport } from './routes/plots.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AlertsRoute = AlertsRouteImport.update({
+  id: '/alerts',
+  path: '/alerts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AutomationRoute = AutomationRouteImport.update({
+  id: '/automation',
+  path: '/automation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CropsRoute = CropsRouteImport.update({
+  id: '/crops',
+  path: '/crops',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DevicesRoute = DevicesRouteImport.update({
+  id: '/devices',
+  path: '/devices',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IrrigationRoute = IrrigationRouteImport.update({
+  id: '/irrigation',
+  path: '/irrigation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MonitorRoute = MonitorRouteImport.update({
+  id: '/monitor',
+  path: '/monitor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MoreRoute = MoreRouteImport.update({
+  id: '/more',
+  path: '/more',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlotsRoute = PlotsRouteImport.update({
+  id: '/plots',
+  path: '/plots',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScheduleRoute = ScheduleRouteImport.update({
+  id: '/schedule',
+  path: '/schedule',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlotsIdRoute = PlotsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => PlotsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/alerts': typeof AlertsRoute
+  '/analytics': typeof AnalyticsRoute
+  '/automation': typeof AutomationRoute
+  '/crops': typeof CropsRoute
+  '/devices': typeof DevicesRoute
+  '/irrigation': typeof IrrigationRoute
+  '/login': typeof LoginRoute
+  '/monitor': typeof MonitorRoute
+  '/more': typeof MoreRoute
+  '/plots': typeof PlotsRouteWithChildren
+  '/profile': typeof ProfileRoute
+  '/schedule': typeof ScheduleRoute
+  '/settings': typeof SettingsRoute
+  '/plots/$id': typeof PlotsIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/alerts': typeof AlertsRoute
+  '/analytics': typeof AnalyticsRoute
+  '/automation': typeof AutomationRoute
+  '/crops': typeof CropsRoute
+  '/devices': typeof DevicesRoute
+  '/irrigation': typeof IrrigationRoute
+  '/login': typeof LoginRoute
+  '/monitor': typeof MonitorRoute
+  '/more': typeof MoreRoute
+  '/plots': typeof PlotsRouteWithChildren
+  '/profile': typeof ProfileRoute
+  '/schedule': typeof ScheduleRoute
+  '/settings': typeof SettingsRoute
+  '/plots/$id': typeof PlotsIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/alerts': typeof AlertsRoute
+  '/analytics': typeof AnalyticsRoute
+  '/automation': typeof AutomationRoute
+  '/crops': typeof CropsRoute
+  '/devices': typeof DevicesRoute
+  '/irrigation': typeof IrrigationRoute
+  '/login': typeof LoginRoute
+  '/monitor': typeof MonitorRoute
+  '/more': typeof MoreRoute
+  '/plots': typeof PlotsRouteWithChildren
+  '/profile': typeof ProfileRoute
+  '/schedule': typeof ScheduleRoute
+  '/settings': typeof SettingsRoute
+  '/plots/$id': typeof PlotsIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/alerts'
+    | '/analytics'
+    | '/automation'
+    | '/crops'
+    | '/devices'
+    | '/irrigation'
+    | '/login'
+    | '/monitor'
+    | '/more'
+    | '/plots'
+    | '/profile'
+    | '/schedule'
+    | '/settings'
+    | '/plots/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/alerts'
+    | '/analytics'
+    | '/automation'
+    | '/crops'
+    | '/devices'
+    | '/irrigation'
+    | '/login'
+    | '/monitor'
+    | '/more'
+    | '/plots'
+    | '/profile'
+    | '/schedule'
+    | '/settings'
+    | '/plots/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/alerts'
+    | '/analytics'
+    | '/automation'
+    | '/crops'
+    | '/devices'
+    | '/irrigation'
+    | '/login'
+    | '/monitor'
+    | '/more'
+    | '/plots'
+    | '/profile'
+    | '/schedule'
+    | '/settings'
+    | '/plots/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AlertsRoute: typeof AlertsRoute
+  AnalyticsRoute: typeof AnalyticsRoute
+  AutomationRoute: typeof AutomationRoute
+  CropsRoute: typeof CropsRoute
+  DevicesRoute: typeof DevicesRoute
+  IrrigationRoute: typeof IrrigationRoute
+  LoginRoute: typeof LoginRoute
+  MonitorRoute: typeof MonitorRoute
+  MoreRoute: typeof MoreRoute
+  PlotsRoute: typeof PlotsRouteWithChildren
+  ProfileRoute: typeof ProfileRoute
+  ScheduleRoute: typeof ScheduleRoute
+  SettingsRoute: typeof SettingsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +233,132 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/alerts': {
+      id: '/alerts'
+      path: '/alerts'
+      fullPath: '/alerts'
+      preLoaderRoute: typeof AlertsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/automation': {
+      id: '/automation'
+      path: '/automation'
+      fullPath: '/automation'
+      preLoaderRoute: typeof AutomationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/crops': {
+      id: '/crops'
+      path: '/crops'
+      fullPath: '/crops'
+      preLoaderRoute: typeof CropsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/devices': {
+      id: '/devices'
+      path: '/devices'
+      fullPath: '/devices'
+      preLoaderRoute: typeof DevicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/irrigation': {
+      id: '/irrigation'
+      path: '/irrigation'
+      fullPath: '/irrigation'
+      preLoaderRoute: typeof IrrigationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/monitor': {
+      id: '/monitor'
+      path: '/monitor'
+      fullPath: '/monitor'
+      preLoaderRoute: typeof MonitorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/more': {
+      id: '/more'
+      path: '/more'
+      fullPath: '/more'
+      preLoaderRoute: typeof MoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plots': {
+      id: '/plots'
+      path: '/plots'
+      fullPath: '/plots'
+      preLoaderRoute: typeof PlotsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schedule': {
+      id: '/schedule'
+      path: '/schedule'
+      fullPath: '/schedule'
+      preLoaderRoute: typeof ScheduleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plots/$id': {
+      id: '/plots/$id'
+      path: '/$id'
+      fullPath: '/plots/$id'
+      preLoaderRoute: typeof PlotsIdRouteImport
+      parentRoute: typeof PlotsRoute
+    }
   }
 }
 
+interface PlotsRouteChildren {
+  PlotsIdRoute: typeof PlotsIdRoute
+}
+
+const PlotsRouteChildren: PlotsRouteChildren = {
+  PlotsIdRoute: PlotsIdRoute,
+}
+
+const PlotsRouteWithChildren = PlotsRoute._addFileChildren(PlotsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AlertsRoute: AlertsRoute,
+  AnalyticsRoute: AnalyticsRoute,
+  AutomationRoute: AutomationRoute,
+  CropsRoute: CropsRoute,
+  DevicesRoute: DevicesRoute,
+  IrrigationRoute: IrrigationRoute,
+  LoginRoute: LoginRoute,
+  MonitorRoute: MonitorRoute,
+  MoreRoute: MoreRoute,
+  PlotsRoute: PlotsRouteWithChildren,
+  ProfileRoute: ProfileRoute,
+  ScheduleRoute: ScheduleRoute,
+  SettingsRoute: SettingsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
